@@ -2,8 +2,19 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+import Botao from './Botao'
+
 class App extends Component {
+
+  state={
+      target:''
+
+  }
+
+
   render() {
+
+    const { cor } = this.props
     return (
       <div className="App">
         <header className="App-header">
@@ -11,10 +22,11 @@ class App extends Component {
           <p>
             Edit <code>src/App.js</code> and save to reload.
           </p>
+          <Botao cor={cor} />
           <a
             className="App-link"
             href="https://reactjs.org"
-            target="_blank"
+            target={this.state.target}
             rel="noopener noreferrer"
           >
             Learn React
@@ -25,4 +37,5 @@ class App extends Component {
   }
 }
 
-export default App;
+
+export default (App);
